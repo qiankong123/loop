@@ -25,6 +25,7 @@ build_with_gcc_win.bat
 Create models folder and logs folder (if they do not exist)
 
 ```
+cd ./build
 ./loop
 ```
 
