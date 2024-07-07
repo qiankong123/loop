@@ -210,8 +210,12 @@ int parse_args(int argc,char* argv[],simpletime* times,char* cmd,int* total_max_
 
 
 int main(int argc,char* argv[]){
-    //设置控制台输出编码为utf-8
+    //设置控制台输出编码为utf-8,也可以手动在控制台输入"chcp 65001"
+    /*
+    #if defined(_WIN32) || defined(__WIN32__) || defined(__WIN64__)
     SetConsoleOutputCP(65001);
+    #endif
+    */
     simpletime times={0,0,0,0};
     //执行命令的字符串
     char cmd_args[100]={0};
@@ -221,6 +225,7 @@ int main(int argc,char* argv[]){
     int cycles = -1;
     parse_args(argc,argv,&times,cmd_args,&total_max_time,&gap,&cycles);
     //测试得到的参数
+    /*
     printf("cmd_args:%s\n",cmd_args);
     printf("day:%d\n",times.day);
     printf("hour:%d\n",times.hour);
@@ -229,6 +234,6 @@ int main(int argc,char* argv[]){
     printf("total_max_time:%d\n",total_max_time);
     printf("gap:%d\n",gap);
     printf("cycles:%d\n",cycles);
-
+    */
     return loop(cmd_args,total_max_time,gap,cycles);
 }

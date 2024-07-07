@@ -2,3 +2,4 @@
 *.[oa]
 note.txt
 *.exe
+/build
